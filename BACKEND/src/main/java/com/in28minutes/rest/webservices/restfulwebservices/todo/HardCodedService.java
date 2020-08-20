@@ -14,9 +14,9 @@ public class HardCodedService {
 	private static int idCounter = 0;
 	
 	static {
-		todos.add(new Todo(++idCounter,  "Learn to Dance", new Date(), true));
-		todos.add(new Todo(++idCounter, "Learn to Sing a song", new Date(),true));
-		todos.add(new Todo(++idCounter, "Learn to Play Guitar", new Date(), true));
+		todos.add(new Todo(++idCounter, "sunilkmr0680", "Learn to Dance", new Date(), true));
+		todos.add(new Todo(++idCounter, "yashkmr0680", "Learn to Sing a song", new Date(),true));
+		todos.add(new Todo(++idCounter, "samarkmr0680", "Learn to Play Guitar", new Date(), true));
 	}
 	public List<Todo> findAll(){
 		return todos;
@@ -24,7 +24,7 @@ public class HardCodedService {
 	
 	public Todo save(Todo todo) {
 		if(todo.getId()==-1 || todo.getId() == 0) {      //to Create a new Todo
-			todo.setId(++idCounter);
+			todo.setId((long) ++idCounter);
 			todos.add(todo);
 		}else {                                     // TO Update Todo
 			deleteById(todo.getId());

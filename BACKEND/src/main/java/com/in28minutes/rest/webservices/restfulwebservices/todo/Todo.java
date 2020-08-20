@@ -2,72 +2,96 @@ package com.in28minutes.rest.webservices.restfulwebservices.todo;
 
 import java.util.Date;
 
-public class Todo {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-	private long id;
+@Entity
+public class Todo {
+	
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	private String username;
 	private String description;
 	private Date targetDate;
-	private boolean done;
-//	private Date startDate;
-//	private Date endDate;
+	private boolean isDone;
 	
 	protected Todo() {
 		
 	}
-	public Todo(long id, String description, Date targetDate, boolean done
-			  //, Date startDate,	Date endDate
-			) {
+	
+	public Todo(long id, String username, String description, Date targetDate, boolean isDone) {
 		super();
 		this.id = id;
+		this.username = username;
 		this.description = description;
 		this.targetDate = targetDate;
-		this.done = done;
-		/*
-		 * this.startDate = startDate; this.endDate = endDate;
-		 */
+		this.isDone = isDone;
 	}
-	public long getId() {
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+
+	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public Date getTargetDate() {
 		return targetDate;
 	}
+
 	public void setTargetDate(Date targetDate) {
 		this.targetDate = targetDate;
 	}
-	
-public boolean isDone() {
-		return done;
+
+	public boolean isDone() {
+		return isDone;
 	}
-	public void setDone(boolean done) {
-		this.done = done;
+
+	public void setDone(boolean isDone) {
+		this.isDone = isDone;
 	}
-	//	public Date getStartDate() {
-//		return startDate;
-//	}
-//	public void setStartDate(Date startDate) {
-//		this.startDate = startDate;
-//	}
-//	public Date getEndDate() {
-//		return endDate;
-//	}
-//	public void setEndDate(Date endDate) {
-//		this.endDate = endDate;
-//	}
+
 	@Override
-	public String toString() {
-		return "Todo [id=" + id + ",  description=" + description + ", targetDate="
-				+ targetDate + ", done=" + done +  "]";
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
 	}
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Todo other = (Todo) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
 	
 }
