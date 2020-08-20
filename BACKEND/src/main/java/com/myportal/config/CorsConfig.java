@@ -1,4 +1,4 @@
-package com.in28minutes.config;
+package com.myportal.config;
 
 public class CorsConfig {
 
