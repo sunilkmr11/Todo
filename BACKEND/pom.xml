@@ -4,12 +4,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.in28minutes.rest.webservices</groupId>
-	<artifactId>restful-web-services</artifactId>
+	<groupId>com.myportal</groupId>
+	<artifactId>my-portal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
-	<name>restful-web-services</name>
+	<name>myportal</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -96,6 +96,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>my-portal</finalName>
 	</build>
 
 	<repositories>
